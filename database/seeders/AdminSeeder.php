@@ -2,16 +2,20 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        User::updateOrCreate(
+            ['email' => 'contact@gestimmo-presta.fr'],
+            [
+                'name' => 'Admin GEST\'IMMO',
+                'password' => Hash::make('ByroN.GESTIMMO2005'),
+            ]
+        );
     }
 }

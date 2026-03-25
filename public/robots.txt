@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Disallow: /admin
+Disallow: /merci
+Disallow: /conditions-generales
+
+Sitemap: https://www.gestimmo-presta.fr/sitemap.xml

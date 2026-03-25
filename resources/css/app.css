@@ -9,17 +9,6 @@
     --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
     --font-serif: 'Playfair Display', Georgia, serif;
 
-    /* Couleurs EDL (P1/P2) */
-    --color-bleu-marine: #1A3A5C;
-    --color-bleu-marine-light: #24507A;
-    --color-bleu-marine-dark: #122840;
-
-    /* Couleurs Investissement (P3/P4) */
-    --color-vert-fonce: #1A6B3C;
-    --color-vert-fonce-light: #228B4E;
-    --color-vert-fonce-dark: #12492A;
-
-    /* Couleurs communes */
     --color-or: #C9A84C;
     --color-or-light: #D4B96A;
     --color-or-dark: #A88A3A;
@@ -27,7 +16,60 @@
     --color-texte: #333333;
     --color-texte-light: #666666;
     --color-rouge: #C0392B;
-    --color-rouge-light: #E74C3C;
     --color-vert-valid: #27AE60;
     --color-blanc: #FFFFFF;
+}
+
+/* Thèmes — appliqué via data-theme sur <main> */
+[data-theme="edl"] {
+    --color-primary: #1A3A5C;
+    --color-primary-light: #24507A;
+    --color-primary-dark: #122840;
+}
+
+[data-theme="immo"] {
+    --color-primary: #1A6B3C;
+    --color-primary-light: #228B4E;
+    --color-primary-dark: #12492A;
+}
+
+/* reCAPTCHA — masquer le badge (mention obligatoire dans le formulaire) */
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
+
+/* Alpine.js */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Slider simulateur */
+.simulator-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e5e7eb;
+    border-radius: 8px;
+    height: 8px;
+}
+
+.simulator-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #C9A84C;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.simulator-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #C9A84C;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }

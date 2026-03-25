@@ -1,12 +1,11 @@
 @props([
     'title' => 'Ce que disent nos clients',
-    'themeColor' => 'bleu-marine',
     'reviews' => [],
 ])
 
 <section class="bg-beige py-16">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="font-serif text-2xl md:text-3xl font-bold text-{{ $themeColor }} text-center mb-10">
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-10" style="color: var(--color-primary)">
             {{ $title }}
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

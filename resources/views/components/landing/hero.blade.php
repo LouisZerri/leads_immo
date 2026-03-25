@@ -1,17 +1,16 @@
 @props([
     'title',
     'subtitle',
-    'themeColor' => 'bleu-marine',
     'pageSource',
     'ctaText' => 'Être rappelé gratuitement',
     'badges' => [],
 ])
 
-<section class="relative bg-{{ $themeColor }} text-blanc overflow-hidden">
+<section class="relative text-blanc overflow-hidden" style="background-color: var(--color-primary)">
     <div class="max-w-7xl mx-auto px-4 py-12 lg:py-20">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
             {{-- Texte --}}
-            <div>
+            <div class="text-center lg:text-left">
                 <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                     {{ $title }}
                 </h1>
@@ -19,11 +18,10 @@
                     {{ $subtitle }}
                 </p>
 
-                {{-- Badges de confiance --}}
                 @if(count($badges) > 0)
-                    <div class="flex flex-wrap gap-4 mb-6">
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-6">
                         @foreach($badges as $badge)
-                            <div class="flex items-center gap-2 bg-blanc/10 rounded-lg px-3 py-2 text-sm">
+                            <div class="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-2 text-sm">
                                 <span>{{ $badge['icon'] }}</span>
                                 <span>{{ $badge['text'] }}</span>
                             </div>
@@ -33,11 +31,10 @@
             </div>
 
             {{-- Formulaire --}}
-            <div class="bg-blanc rounded-2xl shadow-2xl p-6 md:p-8">
+            <div id="lead-form" class="bg-blanc rounded-2xl shadow-2xl p-6 md:p-8" style="scroll-margin-top: 80px">
                 <x-landing.lead-form
                     :page-source="$pageSource"
                     :cta-text="$ctaText"
-                    :theme-color="$themeColor"
                 />
             </div>
         </div>

@@ -21,8 +21,8 @@
             <div>
                 <h4 class="font-semibold text-blanc mb-3">Informations légales</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="/mentions-legales" class="hover:text-blanc transition">Mentions légales</a></li>
-                    <li><a href="/politique-de-confidentialite" class="hover:text-blanc transition">Politique de confidentialité</a></li>
+                    <li><a href="https://www.gestimmo-france.fr/mentions-legales" target="_blank" rel="noopener" class="hover:text-blanc transition">Mentions légales</a></li>
+                    <li><a href="https://www.gestimmo-france.fr/confidentialite" target="_blank" rel="noopener" class="hover:text-blanc transition">Politique de confidentialité</a></li>
                     <li><a href="/conditions-generales" class="hover:text-blanc transition">Conditions générales</a></li>
                 </ul>
             </div>
