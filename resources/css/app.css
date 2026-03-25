@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+
+    /* Couleurs EDL (P1/P2) */
+    --color-bleu-marine: #1A3A5C;
+    --color-bleu-marine-light: #24507A;
+    --color-bleu-marine-dark: #122840;
+
+    /* Couleurs Investissement (P3/P4) */
+    --color-vert-fonce: #1A6B3C;
+    --color-vert-fonce-light: #228B4E;
+    --color-vert-fonce-dark: #12492A;
+
+    /* Couleurs communes */
+    --color-or: #C9A84C;
+    --color-or-light: #D4B96A;
+    --color-or-dark: #A88A3A;
+    --color-beige: #F2F0E8;
+    --color-texte: #333333;
+    --color-texte-light: #666666;
+    --color-rouge: #C0392B;
+    --color-rouge-light: #E74C3C;
+    --color-vert-valid: #27AE60;
+    --color-blanc: #FFFFFF;
+}
