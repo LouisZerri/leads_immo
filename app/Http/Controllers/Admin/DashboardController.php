@@ -30,7 +30,7 @@ class DashboardController extends Controller
         }
 
         if ($request->filled('search')) {
-            $search = $request->search;
+            $search = substr(strip_tags($request->search), 0, 100);
             $query->where(function ($q) use ($search) {
                 $q->where('prenom', 'like', "%{$search}%")
                   ->orWhere('email', 'like', "%{$search}%")
@@ -40,12 +40,17 @@ class DashboardController extends Controller
 
         $leads = $query->paginate(20)->withQueryString();
 
+        // Une seule requête groupée au lieu de 5
+        $statutCounts = Lead::selectRaw('statut, COUNT(*) as total')
+            ->groupBy('statut')
+            ->pluck('total', 'statut');
+
         $stats = [
-            'total' => Lead::count(),
-            'nouveau' => Lead::byStatut('nouveau')->count(),
-            'contacte' => Lead::byStatut('contacte')->count(),
-            'converti' => Lead::byStatut('converti')->count(),
-            'perdu' => Lead::byStatut('perdu')->count(),
+            'total' => $statutCounts->sum(),
+            'nouveau' => $statutCounts->get('nouveau', 0),
+            'contacte' => $statutCounts->get('contacte', 0),
+            'converti' => $statutCounts->get('converti', 0),
+            'perdu' => $statutCounts->get('perdu', 0),
         ];
 
         return view('admin.dashboard', compact('leads', 'stats'));

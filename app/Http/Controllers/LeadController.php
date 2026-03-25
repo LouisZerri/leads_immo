@@ -26,21 +26,23 @@ class LeadController extends Controller
                 return response()->json(['message' => 'Vérification anti-spam échouée.'], 422);
             }
 
-            $recaptchaResponse = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-                'secret' => config('services.recaptcha.secret_key'),
-                'response' => $recaptchaToken,
-                'remoteip' => $request->ip(),
-            ]);
-
-            $recaptchaData = $recaptchaResponse->json();
-
-            // Score minimum 0.3 (0.0 = bot, 1.0 = humain)
-            if (!($recaptchaData['success'] ?? false) || ($recaptchaData['score'] ?? 0) < 0.3) {
-                Log::warning('reCAPTCHA échoué', [
-                    'score' => $recaptchaData['score'] ?? null,
-                    'ip' => $request->ip(),
+            try {
+                $recaptchaResponse = Http::asForm()->timeout(5)->post('https://www.google.com/recaptcha/api/siteverify', [
+                    'secret' => config('services.recaptcha.secret_key'),
+                    'response' => $recaptchaToken,
+                    'remoteip' => $request->ip(),
                 ]);
-                return response()->json(['message' => 'Vérification anti-spam échouée.'], 422);
+
+                $recaptchaData = $recaptchaResponse->json();
+
+                // Score minimum 0.3 (0.0 = bot, 1.0 = humain)
+                if (!($recaptchaData['success'] ?? false) || ($recaptchaData['score'] ?? 0) < 0.3) {
+                    Log::warning('reCAPTCHA score bas', ['score' => $recaptchaData['score'] ?? null]);
+                    return response()->json(['message' => 'Vérification anti-spam échouée.'], 422);
+                }
+            } catch (\Exception $e) {
+                // Si Google API est down, on laisse passer (honeypot + validation suffisent)
+                Log::warning('reCAPTCHA API indisponible', ['error' => $e->getMessage()]);
             }
         }
 
