@@ -4,9 +4,9 @@ return [
 
     // TODO: remplacer par les vrais avis du client
     'reviews' => [
-        ['name' => 'Julien D.', 'stars' => 5, 'text' => 'Mon propriétaire retenait 1 200€ sur ma caution sans justificatif. Grâce à leur accompagnement, j\'ai récupéré la totalité en moins de 3 semaines.'],
-        ['name' => 'Amandine B.', 'stars' => 5, 'text' => 'État des lieux de sortie contesté, on me reprochait des dégradations qui existaient à l\'entrée. Le dossier monté par l\'expert a tout réglé.'],
-        ['name' => 'Marc P.', 'stars' => 5, 'text' => 'Réponse rapide, conseils clairs, et résultat concret. 950€ récupérés sur une retenue abusive. Je recommande à 100%.'],
+        ['name' => 'Karim B.', 'stars' => 5, 'text' => 'Avant : une journée pour mes EDL. Maintenant, 4 dans la matinée. Hyper intuitive.', 'role' => '8 appartements · Marseille', 'result' => '÷4 temps'],
+        ['name' => 'Claire V.', 'stars' => 5, 'text' => 'Le comparatif auto m\'a fait gagner un litige de 1 800 €. Les photos horodatées ont convaincu la commission en 5 min.', 'role' => 'Gestionnaire · Nantes', 'result' => '+1 800 € récupérés'],
+        ['name' => 'Thomas G.', 'stars' => 5, 'text' => 'Testée 3 apps. La seule vraiment conforme ALUR avec un PDF propre. Le mode hors-ligne est top.', 'role' => 'Investisseur · Lille', 'result' => '100% conforme'],
     ],
 
     // TODO: remplacer par les vraies FAQ du client

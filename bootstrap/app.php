@@ -13,7 +13,6 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->redirectGuestsTo('/admin/login');
         $middleware->web(append: [SecurityHeaders::class, CacheHeaders::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

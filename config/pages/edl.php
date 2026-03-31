@@ -4,9 +4,10 @@ return [
 
     // TODO: remplacer par les vrais avis du client
     'reviews' => [
-        ['name' => 'Sophie M.', 'stars' => 5, 'text' => 'Expert très professionnel, rapport détaillé reçu en 24h. Ma caution a été restituée intégralement grâce à l\'état des lieux d\'entrée.'],
-        ['name' => 'Thomas R.', 'stars' => 5, 'text' => 'Intervention rapide et sérieuse. Le rapport avec photos m\'a permis d\'éviter une retenue abusive de 800€ sur ma caution.'],
-        ['name' => 'Marie L.', 'stars' => 4, 'text' => 'Très bon service, l\'expert était ponctuel et minutieux. Je recommande pour tout état des lieux.'],
+        ['name' => 'Sophie M.', 'stars' => 5, 'text' => 'Nous avons divisé par 4 le nombre de contestations. Les rapports sont d\'une précision redoutable.', 'role' => 'Gérante d\'agence · Lyon', 'result' => '-75% de contestations'],
+        ['name' => 'Isabelle R.', 'stars' => 5, 'text' => 'J\'ai récupéré 2 400 € de retenues sur un seul appartement. Avant, je rendais tout par manque de preuves.', 'role' => 'Investisseuse · Toulouse', 'result' => '+2 400 € récupérés'],
+        ['name' => 'Jean-Pierre D.', 'stars' => 5, 'text' => 'Sur mes 35 appartements, ça représentait un mi-temps. Maintenant je reçois les rapports sur mon téléphone.', 'role' => 'Propriétaire 35 lots · Bordeaux', 'result' => '60h économisées/mois'],
+        ['name' => 'Marc L.', 'stars' => 5, 'text' => 'Le comparatif automatique entrée/sortie est un game-changer. Les preuves sont là, photo par photo.', 'role' => 'Directeur copropriété · Paris', 'result' => '0 contestation réussie'],
     ],
 
     // TODO: remplacer par les vraies FAQ du client

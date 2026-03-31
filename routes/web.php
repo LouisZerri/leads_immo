@@ -8,4 +8,3 @@ Route::get('/', function () {
 });
 
 require __DIR__ . '/landing.php';
-require __DIR__ . '/admin.php';

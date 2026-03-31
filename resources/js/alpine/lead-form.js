@@ -9,7 +9,7 @@ export default () => ({
     // Données du formulaire
     form: {
         code_postal: '',
-        type_logement: '',
+        selection: '',
         budget_investissement: '',
         prenom: '',
         telephone: '',
@@ -51,8 +51,8 @@ export default () => ({
             }
         }
 
-        if (['P1', 'P2'].includes(this.pageSource) && !this.form.type_logement) {
-            this.errors.type_logement = 'Ce champ est requis.';
+        if (['P1', 'P2'].includes(this.pageSource) && !this.form.selection) {
+            this.errors.selection = 'Ce champ est requis.';
         }
 
         if (['P3', 'P4'].includes(this.pageSource) && !this.form.budget_investissement) {

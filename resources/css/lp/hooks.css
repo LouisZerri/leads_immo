@@ -1,0 +1,30 @@
+/* Hooks carousel */
+.lp1 .hooks-section { background: linear-gradient(135deg, var(--accent), var(--accent-light)); padding: 50px 0; color: var(--lp-white); overflow: hidden; }
+.lp2 .hooks { background: linear-gradient(135deg, var(--g900), var(--accent-light)); padding: 44px 0; overflow: hidden; }
+
+.lp .hooks-track { display: flex; gap: 20px; animation: scrollHooks 30s linear infinite; width: max-content; }
+.lp .hooks-track:hover { animation-play-state: paused; }
+@keyframes scrollHooks { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.lp .hook-card { min-width: 320px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); border-radius: var(--rad); padding: 20px; }
+.lp .hook-card p { font-size: .9rem; line-height: 1.5; color: rgba(255, 255, 255, .9); }
+
+.lp .hook-tag { font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: inline-block; padding: 3px 10px; border-radius: 50px; }
+.lp .hook-tag.fear { background: rgba(231, 76, 60, .2); color: #FF6B6B; }
+.lp .hook-tag.money { background: rgba(39, 174, 96, .2); color: #6BCB77; }
+.lp .hook-tag.time { background: rgba(52, 152, 219, .2); color: #74C0FC; }
+.lp .hook-tag.proof { background: rgba(212, 168, 83, .12); color: #E8C97A; }
+.lp .hook-tag.auth { background: rgba(155, 89, 182, .2); color: #C39BD3; }
+.lp .hook-tag.tech { background: rgba(139, 92, 246, .2); color: #A78BFA; }
+
+/* Proof bar */
+.lp1 .proof-bar { background: var(--accent); padding: 24px 0; color: var(--lp-white); }
+.lp2 .proof-bar { padding: 22px 0; background: var(--g900); color: var(--lp-white); }
+
+.lp .proof-stats,
+.lp .proof-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; text-align: center; }
+
+.lp1 .proof-val { font-family: var(--font-d); font-size: 1.7rem; font-weight: 700; color: var(--gold); }
+.lp1 .proof-label { font-size: .82rem; color: rgba(255, 255, 255, .6); }
+.lp2 .proof-val { font-family: var(--font-d); font-size: 1.6rem; font-weight: 700; background: linear-gradient(135deg, var(--primary-light), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.lp2 .proof-label { font-size: .78rem; color: var(--g400); }

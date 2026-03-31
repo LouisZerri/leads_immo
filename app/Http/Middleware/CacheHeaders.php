@@ -12,7 +12,7 @@ class CacheHeaders
     {
         $response = $next($request);
 
-        if ($request->isMethod('GET') && !$request->is('admin/*')) {
+        if ($request->isMethod('GET')) {
             $response->headers->set('Cache-Control', 'public, max-age=3600, s-maxage=86400');
         }
 

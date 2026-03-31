@@ -17,7 +17,7 @@ class LandingPageController extends Controller
         $data = config('pages.litige');
         $data['schemaJsonLd'] = $this->buildSchemaJsonLd($data);
 
-        return view('pages.litige-edl', $data);
+        return view('pages.application-edl', $data);
     }
 
     public function investissementLocatif()

@@ -9,7 +9,7 @@ class Lead extends Model
     protected $fillable = [
         'page_source',
         'code_postal',
-        'type_logement',
+        'selection',
         'budget_investissement',
         'prenom',
         'telephone',

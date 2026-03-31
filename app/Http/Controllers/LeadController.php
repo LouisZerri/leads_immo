@@ -49,7 +49,7 @@ class LeadController extends Controller
         $validated = $request->validate([
             'page_source' => 'required|in:P1,P2,P3,P4',
             'code_postal' => 'nullable|digits:5',
-            'type_logement' => 'nullable|in:studio,t2,t3,t4+,maison',
+            'selection' => 'nullable|in:studio,t2,t3,t4+,maison,proprietaire,agence,gestionnaire,sci',
             'budget_investissement' => 'nullable|in:< 100k,100-200k,200-300k,300k+',
             'prenom' => 'required|string|max:100',
             'telephone' => ['required', 'string', 'regex:/^0[67]\d{8}$/'],

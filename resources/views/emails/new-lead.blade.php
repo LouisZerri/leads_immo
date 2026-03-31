@@ -63,10 +63,10 @@
                                     <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; font-weight: 600; color: #333;">{{ $lead->code_postal }}</td>
                                 </tr>
                                 @endif
-                                @if($lead->type_logement)
+                                @if($lead->selection)
                                 <tr>
-                                    <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #999; font-size: 14px;">Type logement</td>
-                                    <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; font-weight: 600; color: #333;">{{ ucfirst($lead->type_logement) }}</td>
+                                    <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; color: #999; font-size: 14px;">{{ $lead->page_source === 'P1' ? 'Type logement' : 'Profil' }}</td>
+                                    <td style="padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 14px; font-weight: 600; color: #333;">{{ ucfirst($lead->selection) }}</td>
                                 </tr>
                                 @endif
                                 @if($lead->budget_investissement)
@@ -93,7 +93,7 @@
                             <table width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td align="center" style="padding-top: 8px;">
-                                        <a href="{{ route('admin.leads.show', $lead) }}" style="display: inline-block; padding: 12px 32px; background-color: #C9A84C; color: #ffffff; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 15px;">
+                                        <a href="{{ config('app.bo_url', 'https://www.gestimmo-france.fr') }}/admin/leads/{{ $lead->id }}" style="display: inline-block; padding: 12px 32px; background-color: #C9A84C; color: #ffffff; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 15px;">
                                             Voir le lead dans le backoffice →
                                         </a>
                                     </td>

@@ -58,14 +58,14 @@
             </div>
         @endif
 
-        @if(in_array($pageSource, ['P1', 'P2']))
+        @if($pageSource === 'P1')
             <div>
-                <label for="type_logement" class="block text-sm font-medium text-texte mb-1">Type de logement</label>
+                <label for="selection" class="block text-sm font-medium text-texte mb-1">Type de logement</label>
                 <select
-                    id="type_logement"
-                    x-model="form.type_logement"
+                    id="selection"
+                    x-model="form.selection"
                     class="w-full px-4 py-3 rounded-lg outline-none transition text-gray-900 placeholder-gray-400 bg-white"
-                    :style="fieldStyle('type_logement')"
+                    :style="fieldStyle('selection')"
                 >
                     <option value="">Sélectionnez...</option>
                     <option value="studio">Studio</option>
@@ -74,7 +74,26 @@
                     <option value="t4+">T4+</option>
                     <option value="maison">Maison</option>
                 </select>
-                <p x-show="errors.type_logement" x-text="errors.type_logement" class="mt-1 text-sm text-rouge"></p>
+                <p x-show="errors.selection" x-text="errors.selection" class="mt-1 text-sm text-rouge"></p>
+            </div>
+        @endif
+
+        @if($pageSource === 'P2')
+            <div>
+                <label for="selection" class="block text-sm font-medium text-texte mb-1">Vous êtes</label>
+                <select
+                    id="selection"
+                    x-model="form.selection"
+                    class="w-full px-4 py-3 rounded-lg outline-none transition text-gray-900 placeholder-gray-400 bg-white"
+                    :style="fieldStyle('selection')"
+                >
+                    <option value="">Sélectionnez...</option>
+                    <option value="proprietaire">Propriétaire particulier</option>
+                    <option value="agence">Agence immobilière</option>
+                    <option value="gestionnaire">Gestionnaire indépendant</option>
+                    <option value="sci">SCI / Investisseur</option>
+                </select>
+                <p x-show="errors.selection" x-text="errors.selection" class="mt-1 text-sm text-rouge"></p>
             </div>
         @endif
 

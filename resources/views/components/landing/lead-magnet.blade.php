@@ -9,21 +9,15 @@
 
 <section class="py-16">
     <div class="max-w-3xl mx-auto px-4">
-        <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark, var(--color-primary))); border-radius: 16px; padding: 40px 32px; text-align: center; color: #fff; position: relative; overflow: hidden;">
+        <div class="lead-magnet-card">
+            <div class="decor-circle-1"></div>
+            <div class="decor-circle-2"></div>
 
-            {{-- Fond décoratif --}}
-            <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
-            <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+            <span class="lead-magnet-icon">{{ $icon }}</span>
 
-            <span style="font-size: 48px; display: block; margin-bottom: 16px;">{{ $icon }}</span>
+            <h2>{{ $title }}</h2>
 
-            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
-                {{ $title }}
-            </h2>
-
-            <p style="opacity: 0.85; font-size: 15px; line-height: 1.6; margin: 0 0 24px; max-width: 500px; display: inline-block;">
-                {{ $description }}
-            </p>
+            <p class="description">{{ $description }}</p>
 
             @if($type === 'download')
                 <div
@@ -63,42 +57,36 @@
                             }
                         }
                     }"
-                    style="max-width: 400px; margin: 0 auto;"
+                    class="lead-magnet-form"
                 >
                     <div x-show="!sent">
-                        <div style="display: flex; gap: 8px;">
+                        <div class="input-row">
                             <input
                                 type="email"
                                 x-model="email"
                                 @keydown.enter="submit()"
                                 placeholder="Votre email"
-                                style="flex: 1; padding: 12px 16px; border: 2px solid rgba(255,255,255,0.3); border-radius: 8px; font-size: 15px; outline: none; background: rgba(255,255,255,0.1); color: #fff;"
                             >
                             <button
                                 type="button"
                                 @click="submit()"
                                 :disabled="loading"
-                                style="padding: 12px 24px; background-color: #C9A84C; color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; white-space: nowrap;"
+                                class="submit-btn"
                             >
                                 <span x-show="!loading">{{ $ctaText }}</span>
                                 <span x-show="loading" x-cloak>Envoi...</span>
                             </button>
                         </div>
-                        <p x-show="error" x-text="error" style="color: #ff9999; font-size: 13px; margin-top: 8px;"></p>
-                        <p style="font-size: 11px; opacity: 0.6; margin-top: 8px;">Gratuit — Votre email ne sera jamais partagé</p>
+                        <p x-show="error" x-text="error" class="error-msg"></p>
+                        <p class="privacy-note">Gratuit — Votre email ne sera jamais partagé</p>
                     </div>
-                    <div x-show="sent" x-cloak style="padding: 16px; background: rgba(255,255,255,0.1); border-radius: 8px;">
-                        <p style="font-size: 16px; font-weight: 600; margin: 0 0 4px;">✅ C'est envoyé !</p>
-                        <p style="font-size: 14px; opacity: 0.8; margin: 0;">Vérifiez votre boîte mail dans quelques instants.</p>
+                    <div x-show="sent" x-cloak class="success-box">
+                        <p class="title">✅ C'est envoyé !</p>
+                        <p class="subtitle">Vérifiez votre boîte mail dans quelques instants.</p>
                     </div>
                 </div>
             @else
-                <a
-                    href="#lead-form"
-                    style="display: inline-block; padding: 14px 32px; background-color: #C9A84C; color: #fff; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 16px;"
-                >
-                    {{ $ctaText }}
-                </a>
+                <a href="#lead-form" class="lead-magnet-cta">{{ $ctaText }}</a>
             @endif
         </div>
     </div>

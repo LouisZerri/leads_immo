@@ -1,0 +1,70 @@
+/* Animations */
+.lp .anim { opacity: 0; transform: translateY(24px); transition: all .6s cubic-bezier(.22, .61, .36, 1); }
+.lp .anim.vis { opacity: 1; transform: translateY(0); }
+
+/* Responsive LP2 features/process */
+@media(max-width:900px) {
+    .lp2 .feat-grid,
+    .lp2 .proc-grid { grid-template-columns: repeat(2, 1fr); }
+    .lp2 .proc-step::after { display: none; }
+}
+
+/* Responsive commun */
+@media(max-width:768px) {
+    .lp .hero-grid,
+    .lp1 .solution-grid,
+    .lp .form-grid { grid-template-columns: 1fr; }
+
+    .lp1 .hero h1,
+    .lp2 .hero h1 { font-size: 1.9rem; }
+
+    .lp1 .hero h1 .rotating-text { display: block; position: relative; height: 2.2rem; min-width: auto; }
+
+    .lp1 .problems-grid { grid-template-columns: 1fr; }
+    .lp1 .benefits-grid { grid-template-columns: 1fr; }
+    .lp1 .magnets-grid { grid-template-columns: 1fr 1fr; }
+
+    .lp1 .testi-grid,
+    .lp2 .testi-grid,
+    .lp2 .pain-grid { grid-template-columns: 1fr; }
+
+    .lp2 .feat-grid { grid-template-columns: 1fr 1fr; }
+    .lp2 .tc-results { grid-template-columns: 1fr; }
+    .lp2 .proc-grid { grid-template-columns: 1fr 1fr; }
+
+    .lp .proof-stats,
+    .lp .proof-grid { gap: 24px; }
+
+    .lp .btn { padding: 12px 24px; font-size: .9rem; }
+    .lp .btn-lg { padding: 14px 28px; font-size: 1rem; }
+    .lp .hero-cta { flex-direction: column; }
+    .lp .hero-cta .btn { width: 100%; }
+
+    /* Solution LP1 */
+    .lp1 .steps { text-align: center; }
+    .lp1 .step { flex-direction: column; align-items: center; text-align: center; }
+    .lp1 .diff-item { justify-content: center; text-align: center; }
+    .lp1 .solution-sidebar { gap: 12px; }
+    .lp1 .solution-card { padding: 20px; }
+
+    /* Form */
+    .lp .form-left h2 { font-size: 1.5rem; }
+
+    /* Chatbot */
+    .lp1 .chatbot-window { width: calc(100% - 32px); right: 16px; bottom: 90px; }
+    .lp2 .cb-window { width: calc(100% - 32px); right: 16px; }
+
+    .lp .section-header h2 { font-size: 1.6rem; }
+
+    /* Nav */
+    .lp .nav-cta { padding: 8px 16px; font-size: .78rem; }
+    .lp .nav-logo .brand { font-size: 1.2rem; }
+    .lp .nav-logo .tagline { font-size: .45rem; }
+}
+
+@media(max-width:480px) {
+    .lp1 .magnets-grid { grid-template-columns: 1fr; }
+    .lp2 .feat-grid { grid-template-columns: 1fr; }
+    .lp2 .proc-grid { grid-template-columns: 1fr; }
+    .lp2 .proc-step::after { display: none; }
+}

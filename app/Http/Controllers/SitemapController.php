@@ -10,7 +10,7 @@ class SitemapController extends Controller
     {
         $urls = [
             ['loc' => url('/etat-des-lieux-professionnel'), 'priority' => '1.0', 'changefreq' => 'weekly'],
-            ['loc' => url('/litige-etat-des-lieux-recours-caution'), 'priority' => '1.0', 'changefreq' => 'weekly'],
+            ['loc' => url('/application-etat-des-lieux'), 'priority' => '1.0', 'changefreq' => 'weekly'],
             ['loc' => url('/investissement-locatif-rentable'), 'priority' => '1.0', 'changefreq' => 'weekly'],
             ['loc' => url('/defiscalisation-immobiliere'), 'priority' => '1.0', 'changefreq' => 'weekly'],
         ];

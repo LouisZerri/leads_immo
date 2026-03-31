@@ -1,0 +1,50 @@
+/* Variables communes LP */
+.lp {
+    --font-d: 'Montserrat', system-ui, sans-serif;
+    --font-b: 'Montserrat', system-ui, sans-serif;
+    --g50: #F7F8FA;
+    --g100: #EEF0F4;
+    --g200: #D5D9E0;
+    --g400: #8B95A5;
+    --g600: #4A5568;
+    --g800: #1F2937;
+    --g900: #0F172A;
+    --red: #E74C3C;
+    --green: #27AE60;
+    --gold: #D4A853;
+    --lp-white: #FFF;
+    --rad: 12px;
+    --rad-l: 20px;
+    --sh-s: 0 1px 3px rgba(0, 0, 0, .08);
+    --sh-m: 0 4px 16px rgba(0, 0, 0, .1);
+    --sh-l: 0 12px 40px rgba(0, 0, 0, .12);
+    --sh-xl: 0 24px 60px rgba(0, 0, 0, .16);
+    font-family: var(--font-b);
+    color: var(--g800);
+    line-height: 1.7;
+}
+
+.lp a { text-decoration: none; color: inherit; }
+.lp .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+/* LP1 theme */
+.lp1 {
+    --primary: #0EA5A0;
+    --primary-dark: #0C8E89;
+    --accent: #0F2B46;
+    --accent-light: #163D5E;
+    --cream: #FBF8F1;
+}
+
+/* LP2 theme */
+.lp2 {
+    --primary: #6C3CE0;
+    --primary-dark: #4A1FB8;
+    --primary-light: #8B5CF6;
+    --accent: #0F172A;
+    --accent-light: #1a1040;
+    --cyan: #06B6D4;
+    --cyan-dark: #0891B2;
+    --mint: #10B981;
+    --cream: #FAF5FF;
+}

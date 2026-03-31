@@ -22,7 +22,7 @@ class LeadSeeder extends Seeder
             Lead::create([
                 'page_source' => $page,
                 'code_postal' => str_pad(rand(10000, 99999), 5, '0', STR_PAD_LEFT),
-                'type_logement' => in_array($page, ['P1', 'P2']) ? $logements[array_rand($logements)] : null,
+                'selection' => in_array($page, ['P1', 'P2']) ? $logements[array_rand($logements)] : null,
                 'budget_investissement' => in_array($page, ['P3', 'P4']) ? $budgets[array_rand($budgets)] : null,
                 'prenom' => $prenom,
                 'telephone' => '06' . str_pad(rand(10000000, 99999999), 8, '0', STR_PAD_LEFT),
