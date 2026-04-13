@@ -4,18 +4,10 @@ export default () => ({
     options: [],
     showInput: false,
     inputValue: '',
-    hasNotif: true,
     started: false,
-
-    init() {
-        setTimeout(() => {
-            if (!this.isOpen) this.hasNotif = true;
-        }, 15000);
-    },
 
     toggle() {
         this.isOpen = !this.isOpen;
-        this.hasNotif = false;
         if (this.isOpen && !this.started) {
             this.started = true;
             this.startChat();
@@ -23,10 +15,8 @@ export default () => ({
     },
 
     async addBotMsg(text, delay = 600) {
-        // Show typing
         this.messages.push({ type: 'typing' });
         await this.wait(delay);
-        // Replace typing with message
         this.messages.pop();
         this.messages.push({ type: 'bot', text });
     },
@@ -50,46 +40,51 @@ export default () => ({
     },
 
     async startChat() {
-        await this.addBotMsg("Bonjour ! 👋 Je suis Sarah, votre conseillère états des lieux.", 800);
-        await this.addBotMsg("Comment puis-je vous aider aujourd'hui ?", 600);
+        await this.addBotMsg("Bonjour ! Je suis l'assistant GEST'IMMO Pro.", 700);
+        await this.addBotMsg("Comment puis-je vous aider concernant l'externalisation de vos états des lieux ?", 600);
         this.showOpts([
             {
-                text: "💰 Combien ça coûte ?",
+                text: "💰 Quels sont vos tarifs ?",
                 action: async () => {
-                    await this.addBotMsg("Nos tarifs varient de 90 à 180 € TTC selon la surface et la localisation.", 600);
-                    await this.addBotMsg("Ce coût est largement amorti : nos clients récupèrent en moyenne 3× plus de retenues sur caution ! 🎯", 800);
+                    await this.addBotMsg("Nos tarifs HT par état des lieux :", 600);
+                    await this.addBotMsg("• EDL Studio : 110 €\n• EDL T2 : 125 €\n• EDL T3 : 140 €\n\nT4 et plus, maisons et locaux commerciaux : sur devis.", 800);
                     this.showOpts([
-                        { text: "📞 Obtenir un devis précis", action: () => this.showForm() },
-                        { text: "🤔 J'ai d'autres questions", action: () => this.moreQuestions() },
+                        { text: "📞 Recevoir une proposition", action: () => this.showForm() },
+                        { text: "🤔 Autres questions", action: () => this.moreQuestions() },
                     ]);
                 },
             },
             {
                 text: "⏰ Quel délai d'intervention ?",
                 action: async () => {
-                    await this.addBotMsg("Nous intervenons sous 48h partout en France. En urgence, sous 24h ! ⚡", 600);
-                    await this.addBotMsg("Vous avez un état des lieux à planifier ?", 500);
+                    await this.addBotMsg("Délai standard : 48h en Île-de-France, 7j/7.", 600);
+                    await this.addBotMsg("Vous avez un besoin urgent à venir ?", 500);
                     this.showOpts([
-                        { text: "Oui, je veux réserver", action: () => this.showForm() },
-                        { text: "Pas encore, juste des infos", action: () => this.moreQuestions() },
+                        { text: "Oui, je veux en discuter", action: () => this.showForm() },
+                        { text: "Non, juste me renseigner", action: () => this.moreQuestions() },
                     ]);
                 },
             },
             {
-                text: "📋 Comment ça fonctionne ?",
+                text: "📋 Comment ça marche ?",
                 action: async () => {
-                    await this.addBotMsg("C'est très simple en 3 étapes :", 500);
-                    await this.addBotMsg("1️⃣ Vous réservez en ligne\n2️⃣ Notre expert intervient sous 48h\n3️⃣ Vous recevez le rapport en 24h", 800);
-                    await this.addBotMsg("Le rapport est 100% conforme ALUR avec photos horodatées et comparatif automatique ! 🛡️", 600);
+                    await this.addBotMsg("Très simple, en 4 étapes :", 500);
+                    await this.addBotMsg("1. Vous nous transmettez le dossier\n2. Nous prenons RDV avec le locataire\n3. EDL réalisé sur place, photos HD\n4. Rapport PDF + Word livré sous 24h", 900);
                     this.showOpts([
-                        { text: "👍 Je veux essayer", action: () => this.showForm() },
-                        { text: "📞 Être rappelé", action: () => this.showForm() },
+                        { text: "👍 Je veux tester", action: () => this.showForm() },
+                        { text: "📞 Parler à un humain", action: () => this.showForm() },
                     ]);
                 },
             },
             {
-                text: "📞 Être rappelé",
-                action: () => this.showForm(),
+                text: "🧪 Faire un EDL test",
+                action: async () => {
+                    await this.addBotMsg("Pour les agences qui souhaitent juger sur pièce, nous proposons un EDL test gratuit sur l'un de vos biens.", 700);
+                    await this.addBotMsg("Aucun engagement, vous évaluez la qualité du rapport et décidez ensuite.", 600);
+                    this.showOpts([
+                        { text: "💼 Organiser un test", action: () => this.showForm() },
+                    ]);
+                },
             },
         ]);
     },
@@ -97,11 +92,11 @@ export default () => ({
     async moreQuestions() {
         this.showOpts([
             {
-                text: "📄 Les rapports sont-ils conformes ?",
+                text: "📄 Rapports opposables ?",
                 action: async () => {
-                    await this.addBotMsg("Oui, 100% conformes au décret ALUR du 30 mars 2016. Opposables en cas de litige. ✅", 600);
+                    await this.addBotMsg("Oui, 100% conformes au décret du 30 mars 2016 et à la loi ALUR. Reconnus par les juridictions civiles.", 700);
                     this.showOpts([
-                        { text: "📞 Obtenir un devis", action: () => this.showForm() },
+                        { text: "📞 Recevoir la grille tarifaire", action: () => this.showForm() },
                     ]);
                 },
             },
@@ -113,7 +108,7 @@ export default () => ({
     },
 
     async showForm() {
-        await this.addBotMsg("Parfait ! Laissez-moi vos coordonnées et un expert vous rappelle sous 24h 👇");
+        await this.addBotMsg("Parfait. Laissez-moi votre email ou téléphone, un conseiller vous recontacte sous 24h ouvrées.");
         this.showInput = true;
     },
 
@@ -137,7 +132,7 @@ export default () => ({
         } catch { /* silently fail */ }
 
         await this.wait(800);
-        await this.addBotMsg("Merci ! ✅ Un expert vous recontacte très vite. Belle journée ! 🌟");
+        await this.addBotMsg("Merci ! Un conseiller GEST'IMMO vous recontacte sous 24h ouvrées. Belle journée !");
     },
 
     wait(ms) {

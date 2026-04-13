@@ -1,0 +1,129 @@
+/* Booking Modal */
+.lp .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(4px);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lp .modal-card {
+    background: var(--lp-white);
+    border-radius: var(--rad-l);
+    max-width: 460px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: var(--sh-xl);
+}
+
+.lp .modal-header {
+    background: var(--accent);
+    color: var(--lp-white);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lp .modal-header h3 {
+    font-family: var(--font-d);
+    font-size: 1.1rem;
+}
+
+.lp .modal-close {
+    background: none;
+    border: none;
+    color: var(--lp-white);
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: .7;
+}
+
+.lp .modal-body {
+    padding: 24px;
+}
+
+.lp .modal-edl-badge {
+    display: inline-block;
+    background: rgba(14, 165, 160, .1);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: .85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.lp .modal-fg {
+    margin-bottom: 14px;
+}
+
+.lp .modal-fg label {
+    display: block;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--g600);
+    margin-bottom: 4px;
+}
+
+.lp .modal-fg input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--g200);
+    border-radius: var(--rad);
+    font-size: .9rem;
+    font-family: inherit;
+    color: var(--g800);
+    background: var(--lp-white);
+}
+
+.lp .modal-fg input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.lp .modal-fg .error {
+    color: var(--red);
+    font-size: .78rem;
+    margin-top: 4px;
+}
+
+.lp .modal-error {
+    color: var(--red);
+    font-size: .85rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.lp .modal-notice {
+    font-size: .72rem;
+    color: var(--g400);
+    text-align: center;
+    margin-top: 12px;
+}
+
+.lp .modal-success {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.lp .modal-success .icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.lp .modal-success h4 {
+    font-family: var(--font-d);
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.lp .modal-success p {
+    color: var(--g600);
+    font-size: .9rem;
+}

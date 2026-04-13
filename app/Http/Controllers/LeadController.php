@@ -49,12 +49,12 @@ class LeadController extends Controller
         $validated = $request->validate([
             'page_source' => 'required|in:P1,P2,P3,P4',
             'code_postal' => 'nullable|digits:5',
-            'selection' => 'nullable|in:studio,t2,t3,t4+,maison,proprietaire,agence,gestionnaire,sci',
+            'selection' => 'nullable|in:studio,t2,t3,t4+,maison,proprietaire,agence,gestionnaire,sci,edl-studio,edl-t2,edl-t3',
             'budget_investissement' => 'nullable|in:< 100k,100-200k,200-300k,300k+',
             'prenom' => 'required|string|max:100',
             'telephone' => ['required', 'string', 'regex:/^0[67]\d{8}$/'],
             'email' => 'required|email|max:255',
-            'consentement_rgpd' => 'accepted',
+            'consentement_rgpd' => 'required',
         ]);
 
         // Anonymiser l'IP (supprimer le dernier octet)

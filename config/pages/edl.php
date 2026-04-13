@@ -2,32 +2,25 @@
 
 return [
 
-    // TODO: remplacer par les vrais avis du client
-    'reviews' => [
-        ['name' => 'Sophie M.', 'stars' => 5, 'text' => 'Nous avons divisé par 4 le nombre de contestations. Les rapports sont d\'une précision redoutable.', 'role' => 'Gérante d\'agence · Lyon', 'result' => '-75% de contestations'],
-        ['name' => 'Isabelle R.', 'stars' => 5, 'text' => 'J\'ai récupéré 2 400 € de retenues sur un seul appartement. Avant, je rendais tout par manque de preuves.', 'role' => 'Investisseuse · Toulouse', 'result' => '+2 400 € récupérés'],
-        ['name' => 'Jean-Pierre D.', 'stars' => 5, 'text' => 'Sur mes 35 appartements, ça représentait un mi-temps. Maintenant je reçois les rapports sur mon téléphone.', 'role' => 'Propriétaire 35 lots · Bordeaux', 'result' => '60h économisées/mois'],
-        ['name' => 'Marc L.', 'stars' => 5, 'text' => 'Le comparatif automatique entrée/sortie est un game-changer. Les preuves sont là, photo par photo.', 'role' => 'Directeur copropriété · Paris', 'result' => '0 contestation réussie'],
-    ],
+    'reviews' => [],
 
-    // TODO: remplacer par les vraies FAQ du client
     'faqItems' => [
-        ['question' => 'Combien coûte un état des lieux professionnel ?', 'answer' => 'Le tarif dépend de la surface et du type de logement. Demandez un devis gratuit en 2 minutes via notre formulaire pour obtenir un prix adapté à votre situation.'],
-        ['question' => 'Quel est le délai d\'intervention ?', 'answer' => 'Nous intervenons sous 48h dans la plupart des cas. En cas d\'urgence, des interventions sous 24h sont possibles selon les disponibilités.'],
-        ['question' => 'L\'état des lieux est-il conforme à la loi Alur ?', 'answer' => 'Oui, tous nos rapports sont conformes au décret du 30 mars 2016 relatif à la loi Alur. Ils incluent les mentions obligatoires, photos horodatées et descriptions détaillées.'],
-        ['question' => 'Que se passe-t-il en cas de désaccord avec le propriétaire ?', 'answer' => 'En cas de désaccord, notre expert peut intervenir en tant que tiers de confiance pour un état des lieux contradictoire. Le rapport a valeur juridique.'],
-        ['question' => 'Quelles zones géographiques couvrez-vous ?', 'answer' => 'Nous intervenons principalement sur Bordeaux et sa métropole, ainsi que sur l\'ensemble de la Gironde. Contactez-nous pour vérifier la couverture de votre secteur.'],
-        ['question' => 'Dois-je être présent lors de l\'état des lieux ?', 'answer' => 'Oui, l\'état des lieux doit être réalisé en présence du locataire et du propriétaire (ou de leurs représentants). Notre expert se charge de la conduite et de la rédaction.'],
-        ['question' => 'Le rapport inclut-il des photos ?', 'answer' => 'Oui, chaque rapport comprend des photos horodatées de l\'ensemble des pièces et équipements. C\'est un élément essentiel en cas de litige ultérieur.'],
-        ['question' => 'Comment récupérer mon rapport après l\'intervention ?', 'answer' => 'Le rapport vous est envoyé par email au format PDF dans les 48h suivant l\'intervention. Un exemplaire est également remis au propriétaire.'],
+        ['question' => 'Vos rapports sont-ils opposables en cas de litige ?', 'answer' => 'Oui. Tous nos EDL sont conformes au décret n°2016-382 du 30 mars 2016 et à la loi ALUR. Photos horodatées, géolocalisées, rapport signé électroniquement. Reconnus par les juridictions civiles et les commissions départementales de conciliation.'],
+        ['question' => 'Que se passe-t-il si le locataire conteste l\'EDL à la sortie ?', 'answer' => 'Sur demande, nous pouvons réaliser une contre-visite pour clarifier les points contestés. Notre opérateur intervient comme tiers de confiance et fournit un complément de constat.'],
+        ['question' => 'Quels délais pour les grandes surfaces ou maisons ?', 'answer' => '48h pour les biens jusqu\'à 120 m². 72h pour les maisons individuelles ou biens supérieurs à 120 m². Une option urgence est disponible (+30% sur le tarif) pour les délais inférieurs à 24h.'],
+        ['question' => 'Acceptez-vous la facturation mensuelle groupée ?', 'answer' => 'Oui, c\'est notre format standard pour les agences. Une seule facture éditée le 1er du mois suivant, récapitulant chaque EDL réalisé. Paiement à 30 jours par virement.'],
+        ['question' => 'Mes négociateurs peuvent-ils être présents lors de l\'EDL ?', 'answer' => 'Bien sûr, sur simple demande. Mais la majorité de nos agences clientes préfèrent libérer totalement leurs équipes commerciales — c\'est tout l\'intérêt de l\'externalisation.'],
+        ['question' => 'Quelle est votre zone d\'intervention ?', 'answer' => 'Île-de-France, prioritairement Seine-et-Marne (77), Seine-Saint-Denis (93), Val-de-Marne (94) et Est parisien. Pour les autres départements, nous consulter.'],
+        ['question' => 'Y a-t-il un engagement de durée ?', 'answer' => 'Aucun engagement de durée, quel que soit le volume mensuel. Vous arrêtez quand vous le souhaitez avec un préavis simple de 30 jours.'],
+        ['question' => 'Comment puis-je tester sans risque ?', 'answer' => 'Vous pouvez démarrer avec un seul EDL pour évaluer notre qualité, puis monter en volume. Nous proposons aussi un EDL test gratuit pour les agences qui souhaitent juger sur pièce avant toute facturation.'],
     ],
 
     'schema' => [
         'types' => [
             [
                 '@type' => 'LocalBusiness',
-                'name' => "GEST'IMMO",
-                'description' => 'État des lieux professionnel à domicile — experts certifiés, conforme loi Alur',
+                'name' => "GEST'IMMO Pro",
+                'description' => 'EDL externalisé pour agences immobilières en Île-de-France — conformité ALUR, intervention 48h',
                 'address' => [
                     '@type' => 'PostalAddress',
                     'streetAddress' => '30 Rue Joseph Bonnet',
@@ -40,13 +33,13 @@ return [
             ],
             [
                 '@type' => 'Service',
-                'name' => 'État des Lieux Professionnel',
-                'description' => "Réalisation d'états des lieux d'entrée et de sortie par un expert certifié",
-                'provider' => ['@type' => 'LocalBusiness', 'name' => "GEST'IMMO"],
+                'name' => 'État des Lieux Externalisé pour Agences',
+                'description' => "Réalisation d'états des lieux d'entrée et de sortie pour agences immobilières",
+                'provider' => ['@type' => 'LocalBusiness', 'name' => "GEST'IMMO Pro"],
             ],
         ],
-        'breadcrumbName' => 'État des Lieux Professionnel',
-        'rating' => ['value' => '4.8', 'count' => '352'],
+        'breadcrumbName' => 'EDL Externalisé Agences',
+        'rating' => ['value' => '4.8', 'count' => '52'],
     ],
 
 ];

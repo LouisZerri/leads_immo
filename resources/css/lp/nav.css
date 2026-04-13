@@ -21,8 +21,29 @@
     text-decoration: none;
 }
 
-.lp .nav-logo .brand { font-size: 1.5rem; font-weight: 900; letter-spacing: .5px; }
-.lp .nav-logo .brand-gest { color: #0254a3; }
-.lp .nav-logo .brand-immo { color: #ED2939; }
-.lp .nav-logo .tagline { font-size: .55rem; font-weight: 600; letter-spacing: .15em; color: #5A7A9B; text-transform: uppercase; }
-.lp .nav-cta { padding: 10px 24px; font-size: .9rem; }
+.lp .nav-logo .brand {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.lp .nav-logo .brand-gest {
+    color: #0254a3;
+}
+
+.lp .nav-logo .brand-immo {
+    color: #ED2939;
+}
+
+.lp .nav-logo .tagline {
+    font-size: .55rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: #5A7A9B;
+    text-transform: uppercase;
+}
+
+.lp .nav-cta {
+    padding: 10px 24px;
+    font-size: .9rem;
+}

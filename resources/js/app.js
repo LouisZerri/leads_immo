@@ -14,6 +14,7 @@ import cookieConsent from './alpine/cookie-consent';
 import lp1Quiz from './alpine/lp1/quiz';
 import lp1Calculator from './alpine/lp1/loss-calculator';
 import lp1Chatbot from './alpine/lp1/chatbot';
+import lp1BookingModal from './alpine/lp1/booking-modal';
 
 // Composants LP2
 import lp2Calculator from './alpine/lp2/time-calculator';
@@ -38,6 +39,7 @@ Alpine.data('cookieConsent', cookieConsent);
 Alpine.data('lp1Quiz', lp1Quiz);
 Alpine.data('lp1Calculator', lp1Calculator);
 Alpine.data('lp1Chatbot', lp1Chatbot);
+Alpine.data('lp1BookingModal', lp1BookingModal);
 
 // LP2
 Alpine.data('lp2Calculator', lp2Calculator);

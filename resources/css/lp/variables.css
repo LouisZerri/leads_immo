@@ -24,8 +24,16 @@
     line-height: 1.7;
 }
 
-.lp a { text-decoration: none; color: inherit; }
-.lp .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.lp a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.lp .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
 
 /* LP1 theme */
 .lp1 {
