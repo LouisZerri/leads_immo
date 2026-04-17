@@ -1,3 +1,5 @@
+import { getRecaptchaToken } from '../shared/recaptcha';
+
 export default () => ({
     open: false,
     loading: false,
@@ -59,14 +61,7 @@ export default () => ({
         this.loading = true;
 
         try {
-            // reCAPTCHA v3 token
-            let recaptchaToken = '';
-            if (typeof grecaptcha !== 'undefined') {
-                const siteKey = document.querySelector('script[src*="recaptcha"]')?.src.match(/render=([^&]+)/)?.[1];
-                if (siteKey) {
-                    recaptchaToken = await grecaptcha.execute(siteKey, { action: 'booking' });
-                }
-            }
+            const recaptchaToken = await getRecaptchaToken('booking');
 
             const response = await fetch('/lead', {
                 method: 'POST',

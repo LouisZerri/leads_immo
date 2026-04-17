@@ -1,4 +1,5 @@
 import { pushFormStep1, pushFormComplete } from './tracking';
+import { getRecaptchaToken } from './shared/recaptcha';
 
 export default () => ({
     step: 1,
@@ -110,14 +111,7 @@ export default () => ({
         this.loading = true;
 
         try {
-            // reCAPTCHA v3 token
-            let recaptchaToken = '';
-            if (typeof grecaptcha !== 'undefined') {
-                const siteKey = document.querySelector('script[src*="recaptcha"]')?.src.match(/render=([^&]+)/)?.[1];
-                if (siteKey) {
-                    recaptchaToken = await grecaptcha.execute(siteKey, { action: 'lead_submit' });
-                }
-            }
+            const recaptchaToken = await getRecaptchaToken('lead_submit');
 
             const body = {
                 ...this.form,
