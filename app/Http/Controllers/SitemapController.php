@@ -8,12 +8,27 @@ class SitemapController extends Controller
 {
     public function index(): Response
     {
-        $urls = [
-            ['loc' => url('/etat-des-lieux-professionnel'), 'priority' => '1.0', 'changefreq' => 'weekly'],
-            ['loc' => url('/application-etat-des-lieux'), 'priority' => '1.0', 'changefreq' => 'weekly'],
-            ['loc' => url('/investissement-locatif-rentable'), 'priority' => '1.0', 'changefreq' => 'weekly'],
-            ['loc' => url('/defiscalisation-immobiliere'), 'priority' => '1.0', 'changefreq' => 'weekly'],
-        ];
+        $useSubdomains = config('landing.use_subdomains');
+        $baseDomain = config('landing.base_domain');
+        $scheme = request()->secure() ? 'https' : 'http';
+
+        if ($useSubdomains) {
+            $urls = array_map(
+                fn ($page) => [
+                    'loc' => "{$scheme}://{$page['subdomain']}.{$baseDomain}/",
+                    'priority' => '1.0',
+                    'changefreq' => 'weekly',
+                ],
+                config('landing.pages')
+            );
+        } else {
+            $urls = [
+                ['loc' => url('/etat-des-lieux-professionnel'), 'priority' => '1.0', 'changefreq' => 'weekly'],
+                ['loc' => url('/application-etat-des-lieux'), 'priority' => '1.0', 'changefreq' => 'weekly'],
+                ['loc' => url('/investissement-locatif-rentable'), 'priority' => '1.0', 'changefreq' => 'weekly'],
+                ['loc' => url('/defiscalisation-immobiliere'), 'priority' => '1.0', 'changefreq' => 'weekly'],
+            ];
+        }
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";

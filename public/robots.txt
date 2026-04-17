@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-Disallow: /admin
 Disallow: /merci
 Disallow: /conditions-generales
 
-Sitemap: https://www.gestimmo-presta.fr/sitemap.xml
+Sitemap: https://edl-pro.gestimmo-france.fr/sitemap.xml
